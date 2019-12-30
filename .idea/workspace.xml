@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fe773e9d-0894-4ca5-873e-9d6920493031" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_00008020-001C0CD12144002E" />
+  <component name="ProjectId" id="1VebL2IrcpRz8uB7PGWtvm7gb7K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="JoChart" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="JoChart" TARGET_NAME="JoChart" CONFIG_NAME="Debug" SCHEME_NAME="JoChart" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="JoChart" RUN_TARGET_NAME="JoChart" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe773e9d-0894-4ca5-873e-9d6920493031" name="Default Changelist" comment="" />
+      <created>1577616448404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577616448404</updated>
+      <workItem from="1577616453116" duration="1672000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="397" y="199" key="SettingsEditor" timestamp="1577616468164">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="397" y="199" key="SettingsEditor/-1080.-1080.1920.1080/840.-1440.3440.1440/0.0.1792.1120@0.0.1792.1120" timestamp="1577616468164" />
+    <state x="550" y="377" key="com.intellij.ide.util.TipDialog" timestamp="1577616454961">
+      <screen x="0" y="23" width="1792" height="1040" />
+    </state>
+    <state x="550" y="377" key="com.intellij.ide.util.TipDialog/-1080.-1057.1920.1057/840.-1417.3440.1417/0.23.1792.1040@0.23.1792.1040" timestamp="1577616454961" />
+    <state x="561" y="251" key="search.everywhere.popup" timestamp="1577616907571">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="561" y="251" key="search.everywhere.popup/-1080.-1080.1920.1080/840.-1440.3440.1440/0.0.1792.1120@0.0.1792.1120" timestamp="1577616907571" />
+  </component>
+</project>

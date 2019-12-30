@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBB1F3D223B9E8E5002865DE /* JoLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB1F3D123B9E8E5002865DE /* JoLine.swift */; };
+		EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */; };
+		EBBA47B223B8A924007B94C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47B123B8A924007B94C7 /* SceneDelegate.swift */; };
+		EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47B323B8A924007B94C7 /* ViewController.swift */; };
+		EBBA47B723B8A924007B94C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47B523B8A924007B94C7 /* Main.storyboard */; };
+		EBBA47B923B8A926007B94C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47B823B8A926007B94C7 /* Assets.xcassets */; };
+		EBBA47BC23B8A926007B94C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47BA23B8A926007B94C7 /* LaunchScreen.storyboard */; };
+		EBBA47C723B8A926007B94C7 /* JoChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47C623B8A926007B94C7 /* JoChartTests.swift */; };
+		EBBA47D223B8A926007B94C7 /* JoChartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47D123B8A926007B94C7 /* JoChartUITests.swift */; };
+		EBBA47E223B8AACC007B94C7 /* JoLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47E123B8AACC007B94C7 /* JoLineChart.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBBA47C323B8A926007B94C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBBA47A423B8A924007B94C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBBA47AB23B8A924007B94C7;
+			remoteInfo = JoChart;
+		};
+		EBBA47CE23B8A926007B94C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBBA47A423B8A924007B94C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBBA47AB23B8A924007B94C7;
+			remoteInfo = JoChart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBB1F3D123B9E8E5002865DE /* JoLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoLine.swift; sourceTree = "<group>"; };
+		EBBA47AC23B8A924007B94C7 /* JoChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBBA47B123B8A924007B94C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EBBA47B323B8A924007B94C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBBA47B623B8A924007B94C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBBA47B823B8A926007B94C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBBA47BB23B8A926007B94C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBBA47BD23B8A926007B94C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBBA47C223B8A926007B94C7 /* JoChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBBA47C623B8A926007B94C7 /* JoChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoChartTests.swift; sourceTree = "<group>"; };
+		EBBA47C823B8A926007B94C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBBA47CD23B8A926007B94C7 /* JoChartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoChartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBBA47D123B8A926007B94C7 /* JoChartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoChartUITests.swift; sourceTree = "<group>"; };
+		EBBA47D323B8A926007B94C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBBA47E123B8AACC007B94C7 /* JoLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoLineChart.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBBA47A923B8A924007B94C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBBA47BF23B8A926007B94C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBBA47CA23B8A926007B94C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB081FAF23B8BD5300EAEEA2 /* modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = modal;
+			sourceTree = "<group>";
+		};
+		EBBA47A323B8A924007B94C7 = {
+			isa = PBXGroup;
+			children = (
+				EBBA47AE23B8A924007B94C7 /* JoChart */,
+				EBBA47C523B8A926007B94C7 /* JoChartTests */,
+				EBBA47D023B8A926007B94C7 /* JoChartUITests */,
+				EBBA47AD23B8A924007B94C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBBA47AD23B8A924007B94C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBBA47AC23B8A924007B94C7 /* JoChart.app */,
+				EBBA47C223B8A926007B94C7 /* JoChartTests.xctest */,
+				EBBA47CD23B8A926007B94C7 /* JoChartUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBBA47AE23B8A924007B94C7 /* JoChart */ = {
+			isa = PBXGroup;
+			children = (
+				EBBA47DF23B8AA70007B94C7 /* chart */,
+				EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */,
+				EBBA47B123B8A924007B94C7 /* SceneDelegate.swift */,
+				EBBA47B323B8A924007B94C7 /* ViewController.swift */,
+				EBBA47B523B8A924007B94C7 /* Main.storyboard */,
+				EBBA47B823B8A926007B94C7 /* Assets.xcassets */,
+				EBBA47BA23B8A926007B94C7 /* LaunchScreen.storyboard */,
+				EBBA47BD23B8A926007B94C7 /* Info.plist */,
+			);
+			path = JoChart;
+			sourceTree = "<group>";
+		};
+		EBBA47C523B8A926007B94C7 /* JoChartTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBBA47C623B8A926007B94C7 /* JoChartTests.swift */,
+				EBBA47C823B8A926007B94C7 /* Info.plist */,
+			);
+			path = JoChartTests;
+			sourceTree = "<group>";
+		};
+		EBBA47D023B8A926007B94C7 /* JoChartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBBA47D123B8A926007B94C7 /* JoChartUITests.swift */,
+				EBBA47D323B8A926007B94C7 /* Info.plist */,
+			);
+			path = JoChartUITests;
+			sourceTree = "<group>";
+		};
+		EBBA47DF23B8AA70007B94C7 /* chart */ = {
+			isa = PBXGroup;
+			children = (
+				EB081FAF23B8BD5300EAEEA2 /* modal */,
+				EBBA47E023B8AAB3007B94C7 /* line */,
+			);
+			path = chart;
+			sourceTree = "<group>";
+		};
+		EBBA47E023B8AAB3007B94C7 /* line */ = {
+			isa = PBXGroup;
+			children = (
+				EBBA47E123B8AACC007B94C7 /* JoLineChart.swift */,
+				EBB1F3D123B9E8E5002865DE /* JoLine.swift */,
+			);
+			path = line;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBBA47AB23B8A924007B94C7 /* JoChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBBA47D623B8A926007B94C7 /* Build configuration list for PBXNativeTarget "JoChart" */;
+			buildPhases = (
+				EBBA47A823B8A924007B94C7 /* Sources */,
+				EBBA47A923B8A924007B94C7 /* Frameworks */,
+				EBBA47AA23B8A924007B94C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JoChart;
+			productName = JoChart;
+			productReference = EBBA47AC23B8A924007B94C7 /* JoChart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBBA47C123B8A926007B94C7 /* JoChartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBBA47D923B8A926007B94C7 /* Build configuration list for PBXNativeTarget "JoChartTests" */;
+			buildPhases = (
+				EBBA47BE23B8A926007B94C7 /* Sources */,
+				EBBA47BF23B8A926007B94C7 /* Frameworks */,
+				EBBA47C023B8A926007B94C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBBA47C423B8A926007B94C7 /* PBXTargetDependency */,
+			);
+			name = JoChartTests;
+			productName = JoChartTests;
+			productReference = EBBA47C223B8A926007B94C7 /* JoChartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBBA47CC23B8A926007B94C7 /* JoChartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBBA47DC23B8A926007B94C7 /* Build configuration list for PBXNativeTarget "JoChartUITests" */;
+			buildPhases = (
+				EBBA47C923B8A926007B94C7 /* Sources */,
+				EBBA47CA23B8A926007B94C7 /* Frameworks */,
+				EBBA47CB23B8A926007B94C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBBA47CF23B8A926007B94C7 /* PBXTargetDependency */,
+			);
+			name = JoChartUITests;
+			productName = JoChartUITests;
+			productReference = EBBA47CD23B8A926007B94C7 /* JoChartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBBA47A423B8A924007B94C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = joshin;
+				TargetAttributes = {
+					EBBA47AB23B8A924007B94C7 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					EBBA47C123B8A926007B94C7 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = EBBA47AB23B8A924007B94C7;
+					};
+					EBBA47CC23B8A926007B94C7 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = EBBA47AB23B8A924007B94C7;
+					};
+				};
+			};
+			buildConfigurationList = EBBA47A723B8A924007B94C7 /* Build configuration list for PBXProject "JoChart" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBBA47A323B8A924007B94C7;
+			productRefGroup = EBBA47AD23B8A924007B94C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBBA47AB23B8A924007B94C7 /* JoChart */,
+				EBBA47C123B8A926007B94C7 /* JoChartTests */,
+				EBBA47CC23B8A926007B94C7 /* JoChartUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBBA47AA23B8A924007B94C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBBA47BC23B8A926007B94C7 /* LaunchScreen.storyboard in Resources */,
+				EBBA47B923B8A926007B94C7 /* Assets.xcassets in Resources */,
+				EBBA47B723B8A924007B94C7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBBA47C023B8A926007B94C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBBA47CB23B8A926007B94C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBBA47A823B8A924007B94C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */,
+				EBB1F3D223B9E8E5002865DE /* JoLine.swift in Sources */,
+				EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */,
+				EBBA47B223B8A924007B94C7 /* SceneDelegate.swift in Sources */,
+				EBBA47E223B8AACC007B94C7 /* JoLineChart.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBBA47BE23B8A926007B94C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBBA47C723B8A926007B94C7 /* JoChartTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBBA47C923B8A926007B94C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBBA47D223B8A926007B94C7 /* JoChartUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBBA47C423B8A926007B94C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBBA47AB23B8A924007B94C7 /* JoChart */;
+			targetProxy = EBBA47C323B8A926007B94C7 /* PBXContainerItemProxy */;
+		};
+		EBBA47CF23B8A926007B94C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBBA47AB23B8A924007B94C7 /* JoChart */;
+			targetProxy = EBBA47CE23B8A926007B94C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EBBA47B523B8A924007B94C7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBBA47B623B8A924007B94C7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBBA47BA23B8A926007B94C7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBBA47BB23B8A926007B94C7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBBA47D423B8A926007B94C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBBA47D523B8A926007B94C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBBA47D723B8A926007B94C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E47G4U83C;
+				INFOPLIST_FILE = JoChart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.joshin.swift.JoChart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBBA47D823B8A926007B94C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E47G4U83C;
+				INFOPLIST_FILE = JoChart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.joshin.swift.JoChart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBBA47DA23B8A926007B94C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E47G4U83C;
+				INFOPLIST_FILE = JoChartTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.joshin.swift.JoChartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoChart.app/JoChart";
+			};
+			name = Debug;
+		};
+		EBBA47DB23B8A926007B94C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E47G4U83C;
+				INFOPLIST_FILE = JoChartTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.joshin.swift.JoChartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JoChart.app/JoChart";
+			};
+			name = Release;
+		};
+		EBBA47DD23B8A926007B94C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E47G4U83C;
+				INFOPLIST_FILE = JoChartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.joshin.swift.JoChartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JoChart;
+			};
+			name = Debug;
+		};
+		EBBA47DE23B8A926007B94C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E47G4U83C;
+				INFOPLIST_FILE = JoChartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.joshin.swift.JoChartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JoChart;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBBA47A723B8A924007B94C7 /* Build configuration list for PBXProject "JoChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBBA47D423B8A926007B94C7 /* Debug */,
+				EBBA47D523B8A926007B94C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBBA47D623B8A926007B94C7 /* Build configuration list for PBXNativeTarget "JoChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBBA47D723B8A926007B94C7 /* Debug */,
+				EBBA47D823B8A926007B94C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBBA47D923B8A926007B94C7 /* Build configuration list for PBXNativeTarget "JoChartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBBA47DA23B8A926007B94C7 /* Debug */,
+				EBBA47DB23B8A926007B94C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBBA47DC23B8A926007B94C7 /* Build configuration list for PBXNativeTarget "JoChartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBBA47DD23B8A926007B94C7 /* Debug */,
+				EBBA47DE23B8A926007B94C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBBA47A423B8A924007B94C7 /* Project object */;
+}
