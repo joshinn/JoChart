@@ -9,12 +9,12 @@
 import UIKit
 
 
-struct ValueModel {
+public struct ValueModel {
     var value: CGFloat
     var point = CGPoint.zero
 }
 
-struct JoAxisData {
+public struct JoAxisData {
     var key = UUID.init().uuidString
     var name: String
     var values: [ValueModel]
@@ -31,7 +31,114 @@ struct JoAxisData {
     }
 }
 
-class AxisChartBase: ChartBase {
+class YAxisLabel: UIView {
+
+    public var existFlag = false
+
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel.init()
+        label.font = .systemFont(ofSize: 9)
+        label.textColor = .black
+        label.textAlignment = .right
+        return label
+    }()
+
+    private lazy var leftLine: UIView = {
+        let li = UIView.init()
+        li.backgroundColor = .black
+        return li
+    }()
+
+    private lazy var rightLine: UIView = {
+        let li = UIView.init()
+        li.backgroundColor = .lightGray
+        return li
+    }()
+
+    public var text: String? {
+        didSet {
+            titleLabel.text = text
+            leftLine.isHidden = text == "0"
+            rightLine.isHidden = text == "0"
+        }
+    }
+
+    public var titleWidth: CGFloat = 0 {
+        didSet {
+            var frame = titleLabel.frame
+            frame.size.width = titleWidth
+            titleLabel.frame = frame
+        }
+    }
+
+    override var frame: CGRect {
+        set {
+            super.frame = newValue
+            titleLabel.frame = .init(x: 0, y: 0, width: titleWidth, height: frame.height)
+            leftLine.frame = .init(x: titleLabel.frame.maxX + 2, y: titleLabel.frame.midY, width: 6, height: 1)
+            rightLine.frame = .init(x: leftLine.frame.maxX, y: titleLabel.frame.midY, width: newValue.width - leftLine.frame.maxX, height: 1)
+        }
+        get {
+            super.frame
+        }
+    }
+
+    init() {
+        super.init(frame: .zero)
+
+        self.addSubview(titleLabel)
+        self.addSubview(leftLine)
+        self.addSubview(rightLine)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
+}
+
+class XAxisLabel: UILabel {
+
+    public var existFlag = false
+
+    private lazy var line: UIView = {
+        let l = UIView.init()
+        l.backgroundColor = .black
+        return l
+    }()
+
+    override var frame: CGRect {
+        set {
+            super.frame = newValue
+            line.frame = .init(x: self.bounds.maxX - 1, y: 0, width: 1, height: 6)
+        }
+        get {
+            super.frame
+        }
+    }
+
+    init() {
+        super.init(frame: .zero)
+
+        self.font = .systemFont(ofSize: 9)
+        self.text = text
+        self.textColor = .black
+        self.textAlignment = .center
+        self.lineBreakMode = .byTruncatingMiddle
+
+        self.addSubview(line)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+
+
+public class AxisChartBase: ChartBase {
 
     lazy var xAxisLine: CAShapeLayer = {
         let line = CAShapeLayer.init()
@@ -265,7 +372,7 @@ class AxisChartBase: ChartBase {
         }
     }
 
-    override func drawChart() {
+    override public func drawChart() {
         super.drawChart()
 
         if xAxisLine.superlayer == nil {
@@ -324,22 +431,22 @@ class AxisChartBase: ChartBase {
 
 
 extension AxisChartBase: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JoIndicatorCell.ReuseIdentifier, for: indexPath) as! JoIndicatorCell
 
         cell.setData(data: listData[indexPath.item])
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         listData.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: 60, height: collectionView.frame.height)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         listData[indexPath.item].active = !listData[indexPath.item].active
         collectionView.reloadItems(at: [indexPath])
 

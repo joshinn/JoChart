@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB80827323BD8F450057B77A /* YAxisLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80827223BD8F450057B77A /* YAxisLabel.swift */; };
-		EB80827523BDFDB60057B77A /* XAxisLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80827423BDFDB60057B77A /* XAxisLabel.swift */; };
 		EBA36AFA23C859E700AAD2C9 /* ChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AF923C859E700AAD2C9 /* ChartBase.swift */; };
 		EBA36AFE23C85C1200AAD2C9 /* AxisChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AFD23C85C1200AAD2C9 /* AxisChartBase.swift */; };
-		EBB1F3D223B9E8E5002865DE /* JoLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB1F3D123B9E8E5002865DE /* JoLine.swift */; };
 		EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */; };
 		EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47B323B8A924007B94C7 /* ViewController.swift */; };
 		EBBA47B723B8A924007B94C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47B523B8A924007B94C7 /* Main.storyboard */; };
@@ -40,11 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB80827223BD8F450057B77A /* YAxisLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YAxisLabel.swift; sourceTree = "<group>"; };
-		EB80827423BDFDB60057B77A /* XAxisLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XAxisLabel.swift; sourceTree = "<group>"; };
 		EBA36AF923C859E700AAD2C9 /* ChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBase.swift; sourceTree = "<group>"; };
 		EBA36AFD23C85C1200AAD2C9 /* AxisChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisChartBase.swift; sourceTree = "<group>"; };
-		EBB1F3D123B9E8E5002865DE /* JoLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoLine.swift; sourceTree = "<group>"; };
 		EBBA47AC23B8A924007B94C7 /* JoChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBA47B323B8A924007B94C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +90,6 @@
 		EB80827123BD8F2D0057B77A /* base */ = {
 			isa = PBXGroup;
 			children = (
-				EB80827223BD8F450057B77A /* YAxisLabel.swift */,
-				EB80827423BDFDB60057B77A /* XAxisLabel.swift */,
 				EBA36AF923C859E700AAD2C9 /* ChartBase.swift */,
 				EBA36AFD23C85C1200AAD2C9 /* AxisChartBase.swift */,
 			);
@@ -170,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				EBBA47E123B8AACC007B94C7 /* JoLineChart.swift */,
-				EBB1F3D123B9E8E5002865DE /* JoLine.swift */,
 			);
 			path = line;
 			sourceTree = "<group>";
@@ -307,11 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */,
-				EBB1F3D223B9E8E5002865DE /* JoLine.swift in Sources */,
 				EBA36AFE23C85C1200AAD2C9 /* AxisChartBase.swift in Sources */,
 				EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */,
-				EB80827323BD8F450057B77A /* YAxisLabel.swift in Sources */,
-				EB80827523BDFDB60057B77A /* XAxisLabel.swift in Sources */,
 				EBBA47E223B8AACC007B94C7 /* JoLineChart.swift in Sources */,
 				EBA36AFA23C859E700AAD2C9 /* ChartBase.swift in Sources */,
 			);

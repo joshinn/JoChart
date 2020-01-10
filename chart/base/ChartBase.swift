@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChartBase: UIView {
+public class ChartBase: UIView {
 
     let colors: [UIColor] = [.hex(value: 0xc23531), .hex(value: 0xf4554), .hex(value: 0x61a0a8),
                              .hex(value: 0xd48265), .hex(value: 0x91c7ae), .hex(value: 0x749f83),

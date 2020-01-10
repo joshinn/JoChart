@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe773e9d-0894-4ca5-873e-9d6920493031" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JoChart/chart/base/AxisChartBase.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JoChart/chart/base/ChartBase.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/xcuserdata/jojo.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/xcuserdata/jojo.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart/SceneDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart/ViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart/chart/line/JoLineChart.swift" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart/chart/line/JoLineChart.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +63,7 @@
       <workItem from="1577616453116" duration="1672000" />
       <workItem from="1577931347165" duration="24830000" />
       <workItem from="1578551697704" duration="3908000" />
-      <workItem from="1578638853821" duration="7406000" />
+      <workItem from="1578638853821" duration="8106000" />
     </task>
     <servers />
   </component>
@@ -98,16 +89,5 @@
     </state>
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/-1080.-1080.1920.1080/840.-1440.3440.1440/0.0.1792.1120@0.0.1792.1120" timestamp="1578646060767" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/840.-1440.3440.1440/0.0.1792.1120/-1080.-1080.1920.1080@0.0.1792.1120" timestamp="1577961296006" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/JoChart/chart/base/AxisChartBase.swift</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
