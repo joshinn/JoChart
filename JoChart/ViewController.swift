@@ -39,17 +39,25 @@ class ViewController: UIViewController {
         btn3.setTitleColor(.black, for: .normal)
         btn3.addTarget(self, action: #selector(reset), for: .touchUpInside)
         self.view.addSubview(btn3)
-    
-        
+
         
     }
 
     @objc func drawChart() {
-        lineChart.draw()
+
+        let data = JoAxisData.init(name: "邮件营销", values: [120, 132.56, 101, 134, 90, 230.3333333, 230.3333333])
+
+        lineChart.setData(list: [data])
+        lineChart.xLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        lineChart.drawChart()
     }
 
     @objc func changeData() {
-        lineChart.change()
+        let data = JoAxisData.init(name: "邮件营销", values: [120, 132.56, 101, 134, 90, 230.3333333, 230.3333333])
+
+        lineChart.setData(list: [data])
+        lineChart.xLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        lineChart.drawChart()
     }
 
     @objc func reset() {
