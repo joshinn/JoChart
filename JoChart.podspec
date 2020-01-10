@@ -12,9 +12,9 @@ Pod::Spec.new do |s|
                     DESC
   s.requires_arc = true
   s.platform     = :ios, "12.0"
-  s.frameworks   = 'UIKit', 'Foundation'
+  s.frameworks   = 'UIKit'
+  s.swift_version = '5.0'
 
   s.source       = { :git => "https://github.com/joshinn/JoChart.git", :tag => s.version.to_s }
-  s.source_files  = "JoChart", "chart/**/*.{swift}"
-
+  s.source_files  = "chart/**/*.{swift}"
 end
