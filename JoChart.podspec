@@ -2,13 +2,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "JoChart"
-  s.version      = "0.1"
+  s.version      = "0.3"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.summary      = "Jo chart is a swift library for drawing chart"
   s.author       = { "joshin" => "xjcute@gmail.com" }
   s.homepage     = "https://github.com/joshinn/JoChart"
   s.description  = <<-DESC
-                      a swift library for drawing chart
+                      a swift library for drawing chart, developing
                     DESC
   s.requires_arc = true
   s.platform     = :ios, "12.0"
