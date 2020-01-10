@@ -15,7 +15,7 @@ public class ChartBase: UIView {
                              .hex(value: 0xca8622), .hex(value: 0xbda29a), .hex(value: 0x6e7074),
                              .hex(value: 0x546570), .hex(value: 0xc4ccd3)]
 
-    init() {
+    public init() {
         super.init(frame: .zero)
     }
 
