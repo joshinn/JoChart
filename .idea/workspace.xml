@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe773e9d-0894-4ca5-873e-9d6920493031" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/xcuserdata/jojo.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/xcuserdata/jojo.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoChart/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart/ViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/base/AxisChartBase.swift" beforeDir="false" afterPath="$PROJECT_DIR$/chart/base/AxisChartBase.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chart/base/ChartBase.swift" beforeDir="false" afterPath="$PROJECT_DIR$/chart/base/ChartBase.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoChart.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.podspec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +63,7 @@
       <workItem from="1577931347165" duration="24830000" />
       <workItem from="1578551697704" duration="3908000" />
       <workItem from="1578638853821" duration="8106000" />
-      <workItem from="1578879594563" duration="2386000" />
+      <workItem from="1578879594563" duration="2621000" />
     </task>
     <servers />
   </component>
@@ -90,10 +84,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="554" y="317" width="683" height="486" key="find.popup/-1080.-1080.1920.1080/840.-1440.3440.1440/0.0.1792.1120@0.0.1792.1120" timestamp="1578641814800" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1578883048244">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1578884020555">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/-1080.-1080.1920.1080/840.-1440.3440.1440/0.0.1792.1120@0.0.1792.1120" timestamp="1578883048244" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/-1080.-1080.1920.1080/840.-1440.3440.1440/0.0.1792.1120@0.0.1792.1120" timestamp="1578884020555" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/840.-1440.3440.1440/0.0.1792.1120/-1080.-1080.1920.1080@0.0.1792.1120" timestamp="1577961296006" />
   </component>
 </project>
