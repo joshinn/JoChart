@@ -22,7 +22,7 @@ public struct JoAxisData {
     var color: UIColor?
     var active = true
 
-    init(name: String, values: [CGFloat]) {
+    public init(name: String, values: [CGFloat]) {
         self.name = name
         var array: [ValueModel] = []
         for v in values {

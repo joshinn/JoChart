@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe773e9d-0894-4ca5-873e-9d6920493031" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/JoChart.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +64,7 @@
       <workItem from="1577931347165" duration="24830000" />
       <workItem from="1578551697704" duration="3908000" />
       <workItem from="1578638853821" duration="8106000" />
-      <workItem from="1578879594563" duration="2621000" />
+      <workItem from="1578879594563" duration="3016000" />
     </task>
     <servers />
   </component>
