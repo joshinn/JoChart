@@ -45,18 +45,18 @@ class ViewController: UIViewController {
 
     @objc func drawChart() {
 
-        let data = JoAxisData.init(name: "邮件营销", values: [120, 132.56, 101, 134, 90, 230.3333333, 230.3333333])
+        let data = JoAxisData.init(name: "邮件营销邮件营销", values: [120, 132.56, 101, 134, 90, 230.3333333, 230.3333333])
 
-        lineChart.setData(list: [data])
-        lineChart.xLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        lineChart.setOptions(data: [data], xAxis: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
         lineChart.drawChart()
     }
 
     @objc func changeData() {
-        let data = JoAxisData.init(name: "邮件营销", values: [120, 132.56, 101, 134, 90, 230.3333333, 230.3333333])
+        let data = JoAxisData.init(name: "邮件营销邮件营销", values: [120, 132.56, 101, 134, 90, 230.3333333, 230.3333333])
+        var data2 = JoAxisData.init(name: "呵呵哒", values: [140, 12.56, 400, 320, 345, 10, 300])
+        data2.color = UIColor.green
 
-        lineChart.setData(list: [data])
-        lineChart.xLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        lineChart.setOptions(data: [data, data2])
         lineChart.drawChart()
     }
 

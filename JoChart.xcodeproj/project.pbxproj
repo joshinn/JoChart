@@ -80,13 +80,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB081FAF23B8BD5300EAEEA2 /* modal */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = modal;
-			sourceTree = "<group>";
-		};
 		EB80827123BD8F2D0057B77A /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				EB80827123BD8F2D0057B77A /* base */,
-				EB081FAF23B8BD5300EAEEA2 /* modal */,
 				EBBA47E023B8AAB3007B94C7 /* line */,
 			);
 			path = chart;

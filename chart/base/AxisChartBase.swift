@@ -17,6 +17,7 @@ public struct ValueModel {
 public struct JoAxisData {
     var key = UUID.init().uuidString
     var name: String
+    var nameWidth: CGFloat = 0
     var values: [ValueModel]
     var color: UIColor?
     var active = true
@@ -136,8 +137,6 @@ class XAxisLabel: UILabel {
 
 }
 
-
-
 public class AxisChartBase: ChartBase {
 
     lazy var xAxisLine: CAShapeLayer = {
@@ -163,7 +162,7 @@ public class AxisChartBase: ChartBase {
     lazy var indicatorCV: UICollectionView = {
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         layout.sectionInset = .zero
         let cv = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .clear
@@ -410,25 +409,26 @@ public class AxisChartBase: ChartBase {
         handleXAxis()
     }
 
-    public func setData(list: [JoAxisData]) {
-        setOptions(list: list, xAxis: xLabels)
+    public func setOptions(data: [JoAxisData]) {
+        setOptions(data: data, xAxis: xLabels)
     }
 
-    public func setOptions(list: [JoAxisData], xAxis: [String]) {
+    public func setOptions(data: [JoAxisData], xAxis: [String]) {
         listData.removeAll()
-        listData += list
+        listData += data
         var index = 0
+        let cellTitleFont = UIFont.systemFont(ofSize: JoIndicatorCell.TitleFontSize)
         for i in 0..<listData.count {
             if listData[i].color == nil {
                 listData[i].color = colors[index % colors.count]
                 index += 1
             }
+            listData[i].nameWidth = listData[i].name.width(withConstrainedHeight: 18, font: cellTitleFont) + JoIndicatorCell.TitleOffset
         }
 
         xLabels = xAxis
     }
 }
-
 
 extension AxisChartBase: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -443,7 +443,8 @@ extension AxisChartBase: UICollectionViewDelegateFlowLayout, UICollectionViewDat
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 60, height: collectionView.frame.height)
+        let data = listData[indexPath.item]
+        return .init(width: data.nameWidth <= 0 ? 60 : data.nameWidth, height: collectionView.frame.height)
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -456,10 +457,12 @@ extension AxisChartBase: UICollectionViewDelegateFlowLayout, UICollectionViewDat
 
 private class JoIndicatorCell: UICollectionViewCell {
     static let ReuseIdentifier = "JoIndicatorCellReuseIdentifier"
+    static let TitleFontSize: CGFloat = 9
+    static let TitleOffset: CGFloat = 18
 
     private lazy var titleLabel: UILabel = {
         let la = UILabel.init()
-        la.font = .systemFont(ofSize: 9)
+        la.font = .systemFont(ofSize: JoIndicatorCell.TitleFontSize)
         la.textColor = .black
         return la
     }()
@@ -482,17 +485,19 @@ private class JoIndicatorCell: UICollectionViewCell {
         super.init(frame: frame)
 
         self.contentView.addSubview(titleLabel)
-        titleLabel.frame = .init(x: 18, y: 0, width: frame.width - 18, height: frame.height)
+        let offset = JoIndicatorCell.TitleOffset
+        let iconWidth = offset - 2
+        titleLabel.frame = .init(x: offset, y: 0, width: frame.width - offset, height: frame.height)
 
         self.contentView.layer.addSublayer(shape)
         shape.addSublayer(circle)
         let path = UIBezierPath.init()
         path.move(to: .init(x: 0, y: self.bounds.midY))
-        path.addLine(to: .init(x: 16, y: self.bounds.midY))
+        path.addLine(to: .init(x: iconWidth, y: self.bounds.midY))
         shape.path = path.cgPath
 
         path.removeAllPoints()
-        path.addArc(withCenter: .init(x: 8, y: self.bounds.midY), radius: 3, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        path.addArc(withCenter: .init(x: iconWidth / 2, y: self.bounds.midY), radius: 3, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         circle.path = path.cgPath
 
         print("cell \(frame)")
