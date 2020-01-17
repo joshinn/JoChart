@@ -93,16 +93,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4ABA9E7F-DF86-4DC0-AD22-A4FB7165468C"
+            uuid = "6EDDE87A-8CD6-4281-AD79-1A097DA0EBCA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "chart/base/AxisChartBase.swift"
+            filePath = "chart/JoPieChart.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
-            landmarkName = "setOptions(data:xAxis:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "handlePie()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

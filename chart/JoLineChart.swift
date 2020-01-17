@@ -8,12 +8,22 @@
 
 import UIKit
 
-public class JoLineChart: AxisChartBase {
+struct SelectIndex {
+    var index1 = -1
+    var index2 = -1
+}
+
+public class JoLineChart: JoAxisChartBase {
+
+    private var lines: [JoLine] = []
 
     override public func drawChart() {
         super.drawChart()
         handleLines()
     }
+
+    private var panSelectIndex = SelectIndex()
+    public var touchBlock: ((_ name: String, _ value: CGFloat, _ color: UIColor) -> String)? = nil
 
     private func handleLines() {
 
@@ -26,13 +36,15 @@ public class JoLineChart: AxisChartBase {
             line.existFlag = false
         }
 
-        for data in listData {
+        for (i, var data) in listData.enumerated() {
             var points: [CGPoint] = []
 
             var line: JoLine? = nil
-            for var value in data.values {
+            for (j, var value) in data.values.enumerated() {
                 value.point.x = circleX
                 value.point.y = (yAxisLimit - value.value) / yAxisLimit * canvasView.bounds.maxY
+
+                data.values[j] = value
 
                 circleX += xLabelWidth
 
@@ -43,7 +55,7 @@ public class JoLineChart: AxisChartBase {
                 if li.key == data.key && data.active {
                     line = li
                     li.existFlag = true
-
+                    break
                 }
             }
 
@@ -61,6 +73,7 @@ public class JoLineChart: AxisChartBase {
                 line!.appear()
             }
 
+            listData[i] = data
         }
 
         lines.removeAll {
@@ -70,11 +83,99 @@ public class JoLineChart: AxisChartBase {
             return !$0.existFlag
         }
     }
+
+    public override func onPanTouch(sender: UIPanGestureRecognizer) {
+        if sender.state == .began {
+            panBegin(sender)
+
+        } else if sender.state == .changed {
+            panMove(sender)
+
+        } else if sender.state == .ended || sender.state == .cancelled {
+            panEnd(sender)
+        }
+    }
+
+}
+
+extension JoLineChart {
+
+    func panBegin(_ sender: UIPanGestureRecognizer) {
+        handleTouch(sender.location(in: self.canvasView))
+    }
+
+    func panMove(_ sender: UIPanGestureRecognizer) {
+        handleTouch(sender.location(in: self.canvasView))
+    }
+
+    func panEnd(_ sender: UIPanGestureRecognizer) {
+        panSelectIndex = SelectIndex()
+        toastView.hide()
+    }
+
+    func handleTouch(_ location: CGPoint) {
+
+        var minDistance: CGFloat = -1
+        var selectLineIndex = -1
+        var selectPointIndex = -1
+
+        for (i, lineData) in listData.enumerated() {
+            if !lineData.active {
+                continue
+            }
+
+            var lastDistance: CGFloat = -1
+
+            for (j, pointData) in lineData.values.enumerated() {
+
+                let distance = hypot(location.x - pointData.point.x, location.y - pointData.point.y)
+//                let distance = abs(location.x - pointData.point.x)
+
+                if distance < 15 {
+                    if minDistance < 0 {
+                        selectLineIndex = i
+                        selectPointIndex = j
+                        minDistance = distance
+                        lastDistance = distance
+
+                    } else if distance < minDistance {
+                        selectLineIndex = i
+                        selectPointIndex = j
+                        minDistance = distance
+
+                        if lastDistance >= 0 && lastDistance < distance {
+                            break
+                        }
+                        lastDistance = distance
+                    }
+                }
+
+            }
+        }
+
+        if selectLineIndex >= 0 && selectPointIndex >= 0 {
+            if panSelectIndex.index1 != selectLineIndex || panSelectIndex.index2 != selectPointIndex {
+                panSelectIndex.index1 = selectLineIndex
+                panSelectIndex.index2 = selectPointIndex
+
+                let lineData = listData[selectLineIndex]
+                let pointData = lineData.values[selectPointIndex]
+
+                if let callback = touchBlock {
+                    let msg = callback(lineData.name, pointData.value, lineData.color!)
+                    toastView.show(message: msg, location: pointData.point)
+                } else {
+                    toastView.show(message: "\(lineData.name): \(pointData.value)", location: pointData.point)
+                }
+
+            }
+        }
+    }
 }
 
 class JoLine: CAShapeLayer {
     private var points: [CGPoint] = []
-    private var circlePoints: [JoPoint] = []
+    private var circlePoints: [JoLinePoint] = []
 
     public private(set) var key: String
 
@@ -106,7 +207,7 @@ class JoLine: CAShapeLayer {
 
         let path = UIBezierPath.init()
         for (index, p) in points.enumerated() {
-            let circlePoint = JoPoint.init(location: p)
+            let circlePoint = JoLinePoint.init(location: p)
             circlePoints.append(circlePoint)
             self.addSublayer(circlePoint)
 
@@ -123,6 +224,9 @@ class JoLine: CAShapeLayer {
         fatalError("init(coder:) has not been implemented")
     }
 
+}
+
+extension JoLine {
     func update(points: [CGPoint]) {
         self.points.removeAll()
         self.points += points
@@ -130,13 +234,13 @@ class JoLine: CAShapeLayer {
         let path = UIBezierPath.init()
 
         for (index, p) in points.enumerated() {
-            var circle: JoPoint? = nil
+            var circle: JoLinePoint? = nil
 
             if circlePoints.count > index {
                 circle = circlePoints[index]
                 circle!.update(location: p)
             } else {
-                circle = JoPoint.init(location: p)
+                circle = JoLinePoint.init(location: p)
                 circlePoints.append(circle!)
                 self.addSublayer(circle!)
             }
@@ -181,7 +285,7 @@ class JoLine: CAShapeLayer {
     }
 }
 
-class JoPoint: CAShapeLayer {
+class JoLinePoint: CAShapeLayer {
     init(location: CGPoint) {
         super.init()
 
@@ -196,7 +300,9 @@ class JoPoint: CAShapeLayer {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
+extension JoLinePoint {
     func update(location: CGPoint) {
 
         let path = UIBezierPath.init(arcCenter: location, radius: 3, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBA36AFA23C859E700AAD2C9 /* ChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AF923C859E700AAD2C9 /* ChartBase.swift */; };
-		EBA36AFE23C85C1200AAD2C9 /* AxisChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AFD23C85C1200AAD2C9 /* AxisChartBase.swift */; };
+		EB1C3F2D23D060CB003BE2BF /* JoPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */; };
+		EBA36AFA23C859E700AAD2C9 /* JoChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AF923C859E700AAD2C9 /* JoChartBase.swift */; };
+		EBA36AFE23C85C1200AAD2C9 /* JoAxisChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AFD23C85C1200AAD2C9 /* JoAxisChartBase.swift */; };
 		EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */; };
 		EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47B323B8A924007B94C7 /* ViewController.swift */; };
 		EBBA47B723B8A924007B94C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47B523B8A924007B94C7 /* Main.storyboard */; };
@@ -37,8 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EBA36AF923C859E700AAD2C9 /* ChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBase.swift; sourceTree = "<group>"; };
-		EBA36AFD23C85C1200AAD2C9 /* AxisChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisChartBase.swift; sourceTree = "<group>"; };
+		EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoPieChart.swift; sourceTree = "<group>"; };
+		EBA36AF923C859E700AAD2C9 /* JoChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoChartBase.swift; sourceTree = "<group>"; };
+		EBA36AFD23C85C1200AAD2C9 /* JoAxisChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoAxisChartBase.swift; sourceTree = "<group>"; };
 		EBBA47AC23B8A924007B94C7 /* JoChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBA47B323B8A924007B94C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,15 +82,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB80827123BD8F2D0057B77A /* base */ = {
-			isa = PBXGroup;
-			children = (
-				EBA36AF923C859E700AAD2C9 /* ChartBase.swift */,
-				EBA36AFD23C85C1200AAD2C9 /* AxisChartBase.swift */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
 		EBBA47A323B8A924007B94C7 = {
 			isa = PBXGroup;
 			children = (
@@ -144,18 +137,12 @@
 		EBBA47DF23B8AA70007B94C7 /* chart */ = {
 			isa = PBXGroup;
 			children = (
-				EB80827123BD8F2D0057B77A /* base */,
-				EBBA47E023B8AAB3007B94C7 /* line */,
+				EBA36AF923C859E700AAD2C9 /* JoChartBase.swift */,
+				EBA36AFD23C85C1200AAD2C9 /* JoAxisChartBase.swift */,
+				EBBA47E123B8AACC007B94C7 /* JoLineChart.swift */,
+				EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */,
 			);
 			path = chart;
-			sourceTree = "<group>";
-		};
-		EBBA47E023B8AAB3007B94C7 /* line */ = {
-			isa = PBXGroup;
-			children = (
-				EBBA47E123B8AACC007B94C7 /* JoLineChart.swift */,
-			);
-			path = line;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,10 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */,
-				EBA36AFE23C85C1200AAD2C9 /* AxisChartBase.swift in Sources */,
+				EBA36AFE23C85C1200AAD2C9 /* JoAxisChartBase.swift in Sources */,
+				EB1C3F2D23D060CB003BE2BF /* JoPieChart.swift in Sources */,
 				EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */,
 				EBBA47E223B8AACC007B94C7 /* JoLineChart.swift in Sources */,
-				EBA36AFA23C859E700AAD2C9 /* ChartBase.swift in Sources */,
+				EBA36AFA23C859E700AAD2C9 /* JoChartBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

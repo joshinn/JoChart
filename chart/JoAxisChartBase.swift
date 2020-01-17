@@ -1,5 +1,5 @@
 //
-//  AxisChartBase.swift
+//  JoAxisChartBase.swift
 //  JoChart
 //
 //  Created by jojo on 2020/1/10.
@@ -9,22 +9,22 @@
 import UIKit
 
 
-public struct ValueModel {
+public struct JoLineValue {
     var value: CGFloat
     var point = CGPoint.zero
 }
 
 public struct JoAxisData {
-    var key = UUID.init().uuidString
-    var name: String
+    public var key = UUID.init().uuidString
+    public var name: String
     var nameWidth: CGFloat = 0
-    var values: [ValueModel]
-    var color: UIColor?
-    var active = true
+    public var values: [JoLineValue]
+    public var color: UIColor?
+    public var active = true
 
     public init(name: String, values: [CGFloat]) {
         self.name = name
-        var array: [ValueModel] = []
+        var array: [JoLineValue] = []
         for v in values {
             array.append(.init(value: v))
         }
@@ -38,6 +38,7 @@ class YAxisLabel: UIView {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel.init()
+        label.tag = 99945
         label.font = .systemFont(ofSize: 9)
         label.textColor = .black
         label.textAlignment = .right
@@ -46,6 +47,7 @@ class YAxisLabel: UIView {
 
     private lazy var leftLine: UIView = {
         let li = UIView.init()
+        li.tag = 99845
         li.backgroundColor = .black
         return li
     }()
@@ -105,6 +107,7 @@ class XAxisLabel: UILabel {
 
     private lazy var line: UIView = {
         let l = UIView.init()
+        l.tag = 99844
         l.backgroundColor = .black
         return l
     }()
@@ -137,7 +140,7 @@ class XAxisLabel: UILabel {
 
 }
 
-public class AxisChartBase: ChartBase {
+public class JoAxisChartBase: JoChartBase {
 
     lazy var xAxisLine: CAShapeLayer = {
         let line = CAShapeLayer.init()
@@ -155,11 +158,13 @@ public class AxisChartBase: ChartBase {
 
     lazy var canvasView: UIView = {
         let v = UIView.init()
-        v.backgroundColor = .init(white: 1, alpha: 0.4)
+        v.isUserInteractionEnabled = false
+//        v.backgroundColor = .init(white: 1, alpha: 0.4)
         return v
     }()
 
     lazy var indicatorCV: UICollectionView = {
+        [unowned self] in
         let layout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
@@ -180,8 +185,6 @@ public class AxisChartBase: ChartBase {
 
     var xLabels: [String] = []
 
-    var lines: [JoLine] = []
-
     var yAxisLimit: CGFloat = 0
 
     public var showLegend = true {
@@ -190,6 +193,99 @@ public class AxisChartBase: ChartBase {
         }
     }
 
+    public var axisLineColor: UIColor? {
+        didSet {
+            if axisLineColor != nil {
+                xAxisLine.strokeColor = axisLineColor!.cgColor
+                yAxisLine.strokeColor = axisLineColor!.cgColor
+            } else {
+                xAxisLine.strokeColor = UIColor.black.cgColor
+                yAxisLine.strokeColor = UIColor.black.cgColor
+            }
+        }
+    }
+
+    public var yAxisLabelColor: UIColor?
+
+    public var xAxisLabelColor: UIColor?
+
+    public override init() {
+        super.init()
+
+        self.enableTouch = true
+        self.toastView.offset = .init(x: 40, y: 20)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override public func drawChart() {
+        super.drawChart()
+
+        if xAxisLine.superlayer == nil {
+            self.layer.addSublayer(xAxisLine)
+        }
+        if yAxisLine.superlayer == nil {
+            self.layer.addSublayer(yAxisLine)
+        }
+        if canvasView.superview == nil {
+            self.addSubview(canvasView)
+        }
+        if indicatorCV.superview == nil {
+            self.addSubview(indicatorCV)
+        }
+
+        indicatorCV.reloadData()
+
+        canvasView.frame = .init(x: 40, y: 20, width: self.bounds.maxX - 40 - 20, height: self.bounds.maxY - 40 - 20)
+        zeroPoint.x = canvasView.frame.minX
+        zeroPoint.y = canvasView.frame.maxY
+        indicatorCV.frame = .init(x: zeroPoint.x, y: canvasView.frame.maxY + 12 + 6, width: canvasView.frame.width, height: self.bounds.maxY - canvasView.frame.maxY - 12 - 6)
+
+        let path = UIBezierPath.init()
+        path.move(to: .init(x: zeroPoint.x - 5, y: zeroPoint.y))
+        path.addLine(to: CGPoint.init(x: canvasView.frame.maxX, y: zeroPoint.y))
+        xAxisLine.path = path.cgPath
+
+        path.removeAllPoints()
+
+        path.move(to: .init(x: zeroPoint.x, y: zeroPoint.y + 5))
+        path.addLine(to: CGPoint.init(x: zeroPoint.x, y: canvasView.frame.minY))
+        yAxisLine.path = path.cgPath
+
+        handleYAxis()
+        handleXAxis()
+    }
+}
+
+extension JoAxisChartBase: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JoIndicatorCell.ReuseIdentifier, for: indexPath) as! JoIndicatorCell
+
+        cell.setData(data: listData[indexPath.item])
+        return cell
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        listData.count
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let data = listData[indexPath.item]
+        return .init(width: data.nameWidth <= 0 ? 60 : data.nameWidth, height: collectionView.frame.height)
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        listData[indexPath.item].active = !listData[indexPath.item].active
+        collectionView.reloadItems(at: [indexPath])
+
+        self.drawChart()
+    }
+}
+
+
+extension JoAxisChartBase {
     open func handleYAxis() {
         var maxValue: CGFloat = 0
         for data in listData {
@@ -308,6 +404,8 @@ public class AxisChartBase: ChartBase {
                 self.insertSubview(yLabel!, at: 0)
             }
 
+            yLabel!.viewWithTag(99845)?.backgroundColor = axisLineColor ?? UIColor.black
+            (yLabel!.viewWithTag(99945) as? UILabel)?.textColor = yAxisLabelColor ?? UIColor.black
         }
 
         for sv in self.subviews {
@@ -347,6 +445,7 @@ public class AxisChartBase: ChartBase {
             }
 
             let frame = CGRect.init(x: canvasView.frame.minX + CGFloat(index) * xLabelWidth, y: canvasView.frame.maxY, width: xLabelWidth, height: 18)
+
             if xLabel != nil {
                 xLabel!.existFlag = true
                 UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
@@ -360,6 +459,9 @@ public class AxisChartBase: ChartBase {
                 xLabel!.frame = frame
                 self.addSubview(xLabel!)
             }
+
+            xLabel!.viewWithTag(99844)?.backgroundColor = axisLineColor ?? UIColor.black
+            xLabel!.textColor = xAxisLabelColor ?? UIColor.black
         }
 
         for sv in self.subviews {
@@ -370,45 +472,9 @@ public class AxisChartBase: ChartBase {
             }
         }
     }
+}
 
-    override public func drawChart() {
-        super.drawChart()
-
-        if xAxisLine.superlayer == nil {
-            self.layer.addSublayer(xAxisLine)
-        }
-        if yAxisLine.superlayer == nil {
-            self.layer.addSublayer(yAxisLine)
-        }
-        if canvasView.superview == nil {
-            self.addSubview(canvasView)
-        }
-        if indicatorCV.superview == nil {
-            self.addSubview(indicatorCV)
-        }
-
-        indicatorCV.reloadData()
-
-        canvasView.frame = .init(x: 40, y: 20, width: self.bounds.maxX - 40 - 20, height: self.bounds.maxY - 40 - 20)
-        zeroPoint.x = canvasView.frame.minX
-        zeroPoint.y = canvasView.frame.maxY
-        indicatorCV.frame = .init(x: zeroPoint.x, y: canvasView.frame.maxY + 12 + 6, width: canvasView.frame.width, height: self.bounds.maxY - canvasView.frame.maxY - 12 - 6)
-
-        let path = UIBezierPath.init()
-        path.move(to: .init(x: zeroPoint.x - 5, y: zeroPoint.y))
-        path.addLine(to: CGPoint.init(x: canvasView.frame.maxX, y: zeroPoint.y))
-        xAxisLine.path = path.cgPath
-
-        path.removeAllPoints()
-
-        path.move(to: .init(x: zeroPoint.x, y: zeroPoint.y + 5))
-        path.addLine(to: CGPoint.init(x: zeroPoint.x, y: canvasView.frame.minY))
-        yAxisLine.path = path.cgPath
-
-        handleYAxis()
-        handleXAxis()
-    }
-
+extension JoAxisChartBase {
     public func setOptions(data: [JoAxisData]) {
         setOptions(data: data, xAxis: xLabels)
     }
@@ -427,31 +493,6 @@ public class AxisChartBase: ChartBase {
         }
 
         xLabels = xAxis
-    }
-}
-
-extension AxisChartBase: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JoIndicatorCell.ReuseIdentifier, for: indexPath) as! JoIndicatorCell
-
-        cell.setData(data: listData[indexPath.item])
-        return cell
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        listData.count
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let data = listData[indexPath.item]
-        return .init(width: data.nameWidth <= 0 ? 60 : data.nameWidth, height: collectionView.frame.height)
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        listData[indexPath.item].active = !listData[indexPath.item].active
-        collectionView.reloadItems(at: [indexPath])
-
-        self.drawChart()
     }
 }
 
