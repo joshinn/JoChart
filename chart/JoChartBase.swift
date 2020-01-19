@@ -10,7 +10,7 @@ import UIKit
 
 public class JoChartBase: UIView {
 
-    let colors: [UIColor] = [.hex(value: 0xc23531), .hex(value: 0xf4554), .hex(value: 0x61a0a8),
+    public static let colors: [UIColor] = [.hex(value: 0xc23531), .hex(value: 0xf4554), .hex(value: 0x61a0a8),
                              .hex(value: 0xd48265), .hex(value: 0x91c7ae), .hex(value: 0x749f83),
                              .hex(value: 0xca8622), .hex(value: 0xbda29a), .hex(value: 0x6e7074),
                              .hex(value: 0x546570), .hex(value: 0xc4ccd3)]
@@ -193,7 +193,7 @@ extension String {
     }
 
     func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
-        return bounding(withConstrainedWidth: width, font: font).width
+        return bounding(withConstrainedWidth: width, font: font).height
     }
 
     func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {

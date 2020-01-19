@@ -32,8 +32,8 @@ public class JoLineChart: JoAxisChartBase {
 
         var circleX = xLabelWidth / CGFloat(2)
 
-        for line in lines {
-            line.existFlag = false
+        lines.forEach {
+            $0.existFlag = false
         }
 
         for (i, var data) in listData.enumerated() {
@@ -63,6 +63,8 @@ public class JoLineChart: JoAxisChartBase {
 
             if line != nil {
                 line!.lineColor = data.color
+                line!.removeFromSuperlayer()
+                canvasView.layer.addSublayer(line!)
                 line!.update(points: points)
             } else if data.active {
                 line = JoLine.init(key: data.key, points: points)
@@ -110,6 +112,11 @@ extension JoLineChart {
 
     func panEnd(_ sender: UIPanGestureRecognizer) {
         panSelectIndex = SelectIndex()
+        lines.forEach {
+            if $0.selected {
+                $0.selected = false
+            }
+        }
         toastView.hide()
     }
 
@@ -161,6 +168,10 @@ extension JoLineChart {
                 let lineData = listData[selectLineIndex]
                 let pointData = lineData.values[selectPointIndex]
 
+                lines.forEach {
+                    $0.selected = $0.key == lineData.key
+                }
+                
                 if let callback = touchBlock {
                     let msg = callback(lineData.name, pointData.value, lineData.color!)
                     toastView.show(message: msg, location: pointData.point)
@@ -180,6 +191,14 @@ class JoLine: CAShapeLayer {
     public private(set) var key: String
 
     public var existFlag = false
+    
+    public var selected = false {
+        didSet {
+            circlePoints.forEach {
+                $0.selected = selected
+            }
+        }
+    }
 
     public var lineColor: UIColor? {
         didSet {
@@ -238,7 +257,7 @@ extension JoLine {
 
             if circlePoints.count > index {
                 circle = circlePoints[index]
-                circle!.update(location: p)
+                circle!.update(location: p, radius: 3, duration: 0.3)
             } else {
                 circle = JoLinePoint.init(location: p)
                 circlePoints.append(circle!)
@@ -286,7 +305,17 @@ extension JoLine {
 }
 
 class JoLinePoint: CAShapeLayer {
+    private var location: CGPoint
+    
+    public var selected = false {
+        didSet {
+            update(location: location, radius: selected ? 5 : 3, duration: 0.15)
+        }
+    }
+    
     init(location: CGPoint) {
+        self.location = location
+        
         super.init()
 
         self.strokeColor = UIColor.black.cgColor
@@ -296,6 +325,14 @@ class JoLinePoint: CAShapeLayer {
         let path = UIBezierPath.init(arcCenter: location, radius: 3, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         self.path = path.cgPath
     }
+    
+    override init(layer: Any) {
+        location = .zero
+        if let line  = layer as? JoLinePoint {
+            location = line.location
+        }
+        super.init()
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -303,18 +340,19 @@ class JoLinePoint: CAShapeLayer {
 }
 
 extension JoLinePoint {
-    func update(location: CGPoint) {
-
-        let path = UIBezierPath.init(arcCenter: location, radius: 3, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+    func update(location: CGPoint, radius: CGFloat, duration: CFTimeInterval) {
+        self.location = location
+        
+        let path = UIBezierPath.init(arcCenter: location, radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         let animation = CABasicAnimation.init(keyPath: "path")
         animation.fromValue = self.path
         self.path = path.cgPath
         animation.toValue = self.path
-        animation.duration = 0.3
+        animation.duration = duration
         animation.timingFunction = .init(name: .linear)
         animation.isRemovedOnCompletion = true
         animation.fillMode = .forwards
         self.add(animation, forKey: "changePath")
-
     }
+    
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JoPieChart: JoChartBase {
+public class JoPieChart: JoChartBase {
 
     private var listData: [JoPieValue] = []
     private var pies: [JoPiePart] = []
@@ -24,13 +24,33 @@ class JoPieChart: JoChartBase {
 
     private var panSelectIndex = -1
 
-    var pieWidth: CGFloat = 5
-    var pieCenter: CGPoint? = nil
-    var pieRadius: CGFloat? = nil
+    public var pieWidth: CGFloat = 5
+    public var pieCenter: CGPoint? = nil
+    public var pieRadius: CGFloat? = nil
 
     public var touchBlock: ((_ name: String, _ value: CGFloat, _ color: UIColor) -> String)? = nil
+    
+    public var selectKey: String? {
+        didSet {
+            if selectKey != nil {
+                pies.forEach {
+                    $0.selected = selectKey == $0.key
+                }
+                for data in listData {
+                    if data.key == selectKey {
+                        centerLabel.text = data.name
+                        centerLabel.textColor = data.color ?? .white
+                    }
+                }
+            } else {
+                pies.forEach {
+                    $0.selected = false
+                }
+            }
+        }
+    }
 
-    override init() {
+    public override init() {
         super.init()
         self.enableTouch = true
     }
@@ -39,7 +59,7 @@ class JoPieChart: JoChartBase {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func drawChart() {
+    public override func drawChart() {
         super.drawChart()
 
         handlePie()
@@ -60,25 +80,38 @@ class JoPieChart: JoChartBase {
         self.centerLabel.center = pieCenter!
         self.centerLabel.font = .systemFont(ofSize: max(10, labelWidth / 6))
 
+        pies.forEach {
+            $0.existFlag = false
+        }
+        
         var sum: CGFloat = 0
         var colorIndex = 0
         for (i, data) in listData.enumerated() {
+            if !data.active {
+                continue
+            }
             sum += data.value
 
             if data.color == nil {
-                listData[i].color = colors[colorIndex % colors.count]
+                
+                listData[i].color = JoChartBase.colors[colorIndex % JoChartBase.colors.count]
                 colorIndex += 1
             }
         }
 
         var accumulate: CGFloat = 0 //< 百分比累计
         for (i, data) in listData.enumerated() {
-
+            if !data.active {
+                continue
+            }
+            
             var pie: JoPiePart? = nil
             for p in pies {
                 if p.key == data.key {
                     pie = p
                     pie?.existFlag = true
+                    p.removeFromSuperlayer()
+                    self.layer.addSublayer(p)
                     break
                 }
             }
@@ -108,6 +141,7 @@ class JoPieChart: JoChartBase {
                 pie!.strokeEnd = to
                 pie!.appear()
             } else {
+                
                 pie!.update(start: from, end: to)
             }
         }
@@ -118,9 +152,10 @@ class JoPieChart: JoChartBase {
             }
             return !$0.existFlag
         }
+        
     }
 
-    func setOptions(_ data: [JoPieValue]) {
+    public func setOptions(_ data: [JoPieValue]) {
         listData.removeAll()
         listData += data
     }
@@ -153,10 +188,15 @@ extension JoPieChart {
 
     func clearToast() {
         panSelectIndex = -1
-        for pie in pies {
-            pie.selected = false
+        if let s = selectKey {
+            selectKey = s
+        } else {
+            pies.forEach {
+                $0.selected = false
+            }
+            centerLabel.text = nil
         }
-        self.centerLabel.text = nil
+        
         toastView.hide()
     }
 
@@ -172,7 +212,7 @@ extension JoPieChart {
 
         var selectPieIndex = -1
 
-        let angle = atan2(location.y - self.pieCenter!.y, location.x - self.pieCenter!.y)
+        let angle = atan2(location.y - self.pieCenter!.y, location.x - self.pieCenter!.x)
         var percent: CGFloat = 0
         if angle < -CGFloat.pi / 2 {
             percent = (2 * CGFloat.pi + angle + CGFloat.pi / 2) / CGFloat.pi / 2
@@ -212,7 +252,8 @@ extension JoPieChart {
             let msg = callback(selectData.name, selectData.value, selectData.color!)
             toastView.show(message: msg, location: location)
         } else {
-            toastView.show(message: "\(selectData.name): \(selectData.value)", location: location)
+            let perValue = round(selectData.percent * 100 * 100) / 100
+            toastView.show(message: "\(selectData.name): \(selectData.value)(\(perValue)%)", location: location)
         }
     }
 }
@@ -223,8 +264,7 @@ public struct JoPieValue {
     public var value: CGFloat
     public var color: UIColor?
     public var active = true
-    var percent: CGFloat = 0
-
+    public var percent: CGFloat = 0
 
     public init(name: String, value: CGFloat, color: UIColor?) {
         self.name = name
@@ -282,6 +322,9 @@ class JoPiePart: CAShapeLayer {
 
     override init(layer: Any) {
         self.key = ""
+        if let part  = layer as? JoPiePart {
+            self.key = part.key
+        }
         super.init(layer: layer)
     }
 

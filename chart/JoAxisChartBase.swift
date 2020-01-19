@@ -482,12 +482,12 @@ extension JoAxisChartBase {
     public func setOptions(data: [JoAxisData], xAxis: [String]) {
         listData.removeAll()
         listData += data
-        var index = 0
+        var colorIndex = 0
         let cellTitleFont = UIFont.systemFont(ofSize: JoIndicatorCell.TitleFontSize)
         for i in 0..<listData.count {
             if listData[i].color == nil {
-                listData[i].color = colors[index % colors.count]
-                index += 1
+                listData[i].color = JoChartBase.colors[colorIndex % JoChartBase.colors.count]
+                colorIndex += 1
             }
             listData[i].nameWidth = listData[i].name.width(withConstrainedHeight: 18, font: cellTitleFont) + JoIndicatorCell.TitleOffset
         }

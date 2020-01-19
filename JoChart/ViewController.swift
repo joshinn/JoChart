@@ -60,10 +60,10 @@ class ViewController: UIViewController {
 //        lineChart.drawChart()
 
         list.removeAll()
-        list.append(JoPieValue(name: "邮件", value: 321))
-        list.append(JoPieValue(name: "发帖", value: 291))
-        list.append(JoPieValue(name: "post commend", value: 421))
-        list.append(JoPieValue(name: "chat each otehr", value: 121))
+        list.append(JoPieValue(name: "邮件", value: 321, color: JoChartBase.colors[0]))
+        list.append(JoPieValue(name: "发帖", value: 291, color: JoChartBase.colors[1]))
+        list.append(JoPieValue(name: "post commend", value: 421, color: JoChartBase.colors[2]))
+        list.append(JoPieValue(name: "chat each otehr", value: 121, color: JoChartBase.colors[3]))
 
         pieChart.setOptions(list)
         pieChart.pieWidth = 60
@@ -78,8 +78,8 @@ class ViewController: UIViewController {
 //        lineChart.setOptions(data: [data, data2])
 //        lineChart.drawChart()
 
-        list[2].value = CGFloat.random(in: 100...1600)
-        list[0].value = CGFloat.random(in: 100...1600)
+        list[0].active = !list[0].active
+//        list[0].value = CGFloat.random(in: 100...1600)
         pieChart.setOptions(list)
         pieChart.drawChart()
     }
