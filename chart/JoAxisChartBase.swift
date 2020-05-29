@@ -23,12 +23,17 @@ public struct JoAxisData {
     public var active = true
 
     public init(name: String, values: [CGFloat]) {
+        self.init(name: name, values: values, color: nil)
+    }
+    
+    public init(name: String, values: [CGFloat], color: UIColor?) {
         self.name = name
         var array: [JoLineValue] = []
         for v in values {
             array.append(.init(value: v))
         }
         self.values = array
+        self.color = color
     }
 }
 
@@ -219,7 +224,7 @@ public class JoAxisChartBase: JoChartBase {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override public func drawChart() {
         super.drawChart()
 

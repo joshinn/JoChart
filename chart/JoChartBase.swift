@@ -9,6 +9,8 @@
 import UIKit
 
 public class JoChartBase: UIView {
+    
+    private var preFrame: CGRect?
 
     public static let colors: [UIColor] = [.hex(value: 0xc23531), .hex(value: 0xf4554), .hex(value: 0x61a0a8),
                              .hex(value: 0xd48265), .hex(value: 0x91c7ae), .hex(value: 0x749f83),
@@ -50,6 +52,18 @@ public class JoChartBase: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if let fr = preFrame {
+            if fr.size != self.frame.size {
+                self.drawChart()
+            }
+        }
+        preFrame = self.frame
+        
+    }
+    
     open func drawChart() {
 
     }
@@ -75,6 +89,13 @@ class JoToastView: UIView {
         super.init(frame: .zero)
         self.backgroundColor = .white
         self.layer.cornerRadius = 6
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 4
+        self.layer.shadowOffset = .init(width: 2, height: 2)
+        self.layer.shadowOpacity = 0.3
+        
+        
         self.alpha = 0
         self.isHidden = true
         self.addSubview(titleLabel)

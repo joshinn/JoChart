@@ -46,6 +46,7 @@ public class JoPieChart: JoChartBase {
                 pies.forEach {
                     $0.selected = false
                 }
+                centerLabel.text = nil
             }
         }
     }

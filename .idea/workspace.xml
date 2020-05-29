@@ -2,14 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe773e9d-0894-4ca5-873e-9d6920493031" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JoChart/Assets.xcassets/Oval.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/Assets.xcassets/Oval.imageset/Oval.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/Assets.xcassets/Oval.imageset/Oval@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/Assets.xcassets/rect.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/Assets.xcassets/rect.imageset/Rectangle@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/Assets.xcassets/rect.imageset/Rectangle@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/BaseViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/HeatViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/PieViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/TableViewController.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JoChart/Util.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/project.xcworkspace/xcuserdata/jojo.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoChart.xcodeproj/xcuserdata/jojo.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart.xcodeproj/xcuserdata/jojo.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoChart/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoChart/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/JoChart/LineViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chart/JoChartBase.swift" beforeDir="false" afterPath="$PROJECT_DIR$/chart/JoChartBase.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_00008020-001C0CD12144002E" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -65,6 +82,11 @@
       <workItem from="1578638853821" duration="8106000" />
       <workItem from="1578879594563" duration="3016000" />
       <workItem from="1579250546291" duration="848000" />
+      <workItem from="1581505889961" duration="57000" />
+      <workItem from="1581505967435" duration="4000" />
+      <workItem from="1581506002766" duration="536000" />
+      <workItem from="1583139449330" duration="117000" />
+      <workItem from="1583139733442" duration="4000" />
     </task>
     <servers />
   </component>

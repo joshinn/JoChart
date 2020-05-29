@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		EB1C3F2D23D060CB003BE2BF /* JoPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */; };
+		EB72C82223E863C1003F3329 /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72C82123E863C1003F3329 /* PieViewController.swift */; };
+		EB72C82423E86472003F3329 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72C82323E86472003F3329 /* TableViewController.swift */; };
+		EB72C82623E867B0003F3329 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72C82523E867B0003F3329 /* Util.swift */; };
+		EB72C82823E867FC003F3329 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72C82723E867FC003F3329 /* BaseViewController.swift */; };
+		EB72C82A23E9A70E003F3329 /* HeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72C82923E9A70E003F3329 /* HeatViewController.swift */; };
 		EBA36AFA23C859E700AAD2C9 /* JoChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AF923C859E700AAD2C9 /* JoChartBase.swift */; };
 		EBA36AFE23C85C1200AAD2C9 /* JoAxisChartBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA36AFD23C85C1200AAD2C9 /* JoAxisChartBase.swift */; };
 		EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */; };
-		EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47B323B8A924007B94C7 /* ViewController.swift */; };
+		EBBA47B423B8A924007B94C7 /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBA47B323B8A924007B94C7 /* LineViewController.swift */; };
 		EBBA47B723B8A924007B94C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47B523B8A924007B94C7 /* Main.storyboard */; };
 		EBBA47B923B8A926007B94C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47B823B8A926007B94C7 /* Assets.xcassets */; };
 		EBBA47BC23B8A926007B94C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBA47BA23B8A926007B94C7 /* LaunchScreen.storyboard */; };
@@ -40,11 +45,16 @@
 
 /* Begin PBXFileReference section */
 		EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoPieChart.swift; sourceTree = "<group>"; };
+		EB72C82123E863C1003F3329 /* PieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewController.swift; sourceTree = "<group>"; };
+		EB72C82323E86472003F3329 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		EB72C82523E867B0003F3329 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		EB72C82723E867FC003F3329 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EB72C82923E9A70E003F3329 /* HeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatViewController.swift; sourceTree = "<group>"; };
 		EBA36AF923C859E700AAD2C9 /* JoChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoChartBase.swift; sourceTree = "<group>"; };
 		EBA36AFD23C85C1200AAD2C9 /* JoAxisChartBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoAxisChartBase.swift; sourceTree = "<group>"; };
 		EBBA47AC23B8A924007B94C7 /* JoChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EBBA47B323B8A924007B94C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBBA47B323B8A924007B94C7 /* LineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = "<group>"; };
 		EBBA47B623B8A924007B94C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBBA47B823B8A926007B94C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBBA47BB23B8A926007B94C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,11 +120,16 @@
 			isa = PBXGroup;
 			children = (
 				EBBA47AF23B8A924007B94C7 /* AppDelegate.swift */,
-				EBBA47B323B8A924007B94C7 /* ViewController.swift */,
+				EBBA47B323B8A924007B94C7 /* LineViewController.swift */,
+				EB72C82123E863C1003F3329 /* PieViewController.swift */,
 				EBBA47B523B8A924007B94C7 /* Main.storyboard */,
 				EBBA47B823B8A926007B94C7 /* Assets.xcassets */,
 				EBBA47BA23B8A926007B94C7 /* LaunchScreen.storyboard */,
 				EBBA47BD23B8A926007B94C7 /* Info.plist */,
+				EB72C82323E86472003F3329 /* TableViewController.swift */,
+				EB72C82523E867B0003F3329 /* Util.swift */,
+				EB72C82723E867FC003F3329 /* BaseViewController.swift */,
+				EB72C82923E9A70E003F3329 /* HeatViewController.swift */,
 			);
 			path = JoChart;
 			sourceTree = "<group>";
@@ -280,8 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBBA47B423B8A924007B94C7 /* ViewController.swift in Sources */,
+				EB72C82223E863C1003F3329 /* PieViewController.swift in Sources */,
+				EB72C82623E867B0003F3329 /* Util.swift in Sources */,
+				EBBA47B423B8A924007B94C7 /* LineViewController.swift in Sources */,
+				EB72C82A23E9A70E003F3329 /* HeatViewController.swift in Sources */,
 				EBA36AFE23C85C1200AAD2C9 /* JoAxisChartBase.swift in Sources */,
+				EB72C82423E86472003F3329 /* TableViewController.swift in Sources */,
+				EB72C82823E867FC003F3329 /* BaseViewController.swift in Sources */,
 				EB1C3F2D23D060CB003BE2BF /* JoPieChart.swift in Sources */,
 				EBBA47B023B8A924007B94C7 /* AppDelegate.swift in Sources */,
 				EBBA47E223B8AACC007B94C7 /* JoLineChart.swift in Sources */,
