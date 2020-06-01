@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JoHeatChart: JoChartBase {
+public class JoHeatChart: JoChartBase {
     
     private var listData: [JoHeatValue] = []
     
@@ -25,7 +25,7 @@ class JoHeatChart: JoChartBase {
     
     var maxRadius: CGFloat = 8
     
-    override init() {
+    override public init() {
         super.init()
         
         self.addSubview(imageView)
@@ -36,7 +36,7 @@ class JoHeatChart: JoChartBase {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func drawChart() {
+    override public func drawChart() {
         super.drawChart()
         
         imageView.frame = self.bounds
@@ -186,9 +186,10 @@ extension JoHeatChart {
     }
 }
 
-struct JoHeatValue {
+public struct JoHeatValue {
     var point: CGPoint = .zero
     var radius: CGFloat = 8
     var location: CGPoint
     var value: CGFloat
 }
+
