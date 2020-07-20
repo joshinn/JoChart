@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JoChart"
-  s.version      = "0.13"
+  s.version      = "0.14"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.summary      = "Jo chart is a swift library for drawing chart"
   s.author       = { "joshin" => "xjcute@gmail.com" }
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.source       = { :git => "https://github.com/joshinn/JoChart.git", :tag => s.version.to_s }
-  s.source_files  = "chart/**/*.{swift, metal}"
+  s.source_files  = "chart/**/*.*"
 
 end

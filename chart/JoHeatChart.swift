@@ -17,7 +17,7 @@ public class JoHeatChart: JoChartBase {
     /// 8
     private let bitsPerComponent = 8
     
-    enum RenderType {
+    public enum RenderType {
         case CPU
         case GPU
     }
@@ -86,7 +86,7 @@ public class JoHeatChart: JoChartBase {
     ///   - paletteColors: 调色板颜色，从低到高，默认 [UIColor.green, UIColor.yellow, UIColor.orange,  UIColor.red]
     ///   - paletteRatio: 调色板各个颜色的束位置，范围(0, 1]，默认 [0.25, 0.55, 0.85, 1]
     /// - Attention: paletteColors元素数和paletteRatio一致
-    init(render type: RenderType = .GPU,
+    public init(render type: RenderType = .GPU,
          paletteColors: [UIColor] = [UIColor.green, UIColor.yellow, UIColor.orange,  UIColor.red],
          paletteRatio: [CGFloat] = [CGFloat(0.25), CGFloat(0.55), CGFloat(0.85), CGFloat(1.0)]) {
         super.init()
