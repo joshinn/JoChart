@@ -11,8 +11,8 @@ import UIKit
 class LineViewController: BaseViewController {
 
     private lazy var lineChart: JoLineChart = {
-        let chart = JoLineChart.init()
-        chart.enableTouch = false
+        let chart = JoLineChart()
+        chart.enableTouch(true)
         return chart
     }()
 

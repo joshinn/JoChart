@@ -23,26 +23,28 @@ public class JoChartBase: UIView {
         return toast
     }()
 
-    private lazy var pan: JoImmediatelyPanGestureRecognizer = {
+    lazy var pan: JoImmediatelyPanGestureRecognizer = {
         [unowned self] in
         let gesture = JoImmediatelyPanGestureRecognizer.init(target: self, action: #selector(self.onPanTouch(sender:)))
         gesture.maximumNumberOfTouches = 1
         return gesture
     }()
-
-    public var enableTouch = false {
-        didSet {
-            if enableTouch {
-                if self.pan.view == nil {
-                    self.addGestureRecognizer(self.pan)
-                }
-            } else {
-                if self.pan.view == self {
-                    self.removeGestureRecognizer(self.pan)
-                }
+     
+    public func enableTouch(_ enable: Bool) {
+        mEnableTouch = enable
+        
+        if enable {
+            if self.pan.view == nil {
+                self.addGestureRecognizer(self.pan)
+            }
+        } else {
+            if self.pan.view == self {
+                self.removeGestureRecognizer(self.pan)
             }
         }
     }
+    
+    var mEnableTouch = false
 
     public init() {
         super.init(frame: .zero)

@@ -163,11 +163,24 @@ public class JoAxisChartBase: JoChartBase {
 
     lazy var canvasView: UIView = {
         let v = UIView.init()
-        v.isUserInteractionEnabled = false
+//        v.isUserInteractionEnabled = true
 //        v.backgroundColor = .init(white: 1, alpha: 0.4)
         return v
     }()
-
+    
+    public override func enableTouch(_ enable: Bool) {
+        mEnableTouch = enable
+        if enable {
+            if self.pan.view == nil {
+                canvasView.addGestureRecognizer(self.pan)
+            }
+        } else {
+            if self.pan.view == self {
+                canvasView.removeGestureRecognizer(self.pan)
+            }
+        }
+    }
+   
     lazy var indicatorCV: UICollectionView = {
         [unowned self] in
         let layout = UICollectionViewFlowLayout.init()
@@ -217,7 +230,7 @@ public class JoAxisChartBase: JoChartBase {
     public override init() {
         super.init()
 
-        self.enableTouch = true
+        self.enableTouch(true)
         self.toastView.offset = .init(x: 40, y: 20)
     }
 

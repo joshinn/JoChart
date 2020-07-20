@@ -53,7 +53,7 @@ public class JoPieChart: JoChartBase {
 
     public override init() {
         super.init()
-        self.enableTouch = true
+        self.enableTouch(true)
     }
 
     required init?(coder: NSCoder) {

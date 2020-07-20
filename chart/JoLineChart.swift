@@ -21,7 +21,7 @@ public class JoLineChart: JoAxisChartBase {
         super.drawChart()
         handleLines()
     }
-
+    
     private var panSelectIndex = SelectIndex()
     public var touchBlock: ((_ name: String, _ value: CGFloat, _ color: UIColor) -> String)? = nil
 
