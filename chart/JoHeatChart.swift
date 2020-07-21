@@ -58,7 +58,7 @@ public class JoHeatChart: JoChartBase {
         } else {
             uint index = (1 - color.r) * paletteTexture.get_width() - 1;
             half4 paletteColor = paletteTexture.read(uint2(index, 0));
-            destTexture.write(half4(paletteColor.b, paletteColor.g, paletteColor.r, 1), gid);
+            destTexture.write(half4(paletteColor.b, paletteColor.g, paletteColor.r, paletteColor.a), gid);
         }
     }
     """
