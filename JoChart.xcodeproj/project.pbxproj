@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EB1C3F2D23D060CB003BE2BF /* JoPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */; };
-		EB296ABB24C52A1100977A8E /* JoChartShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB296ABA24C52A1100977A8E /* JoChartShaders.metal */; };
 		EB5FB9CD248495670009F119 /* JoHeatChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5FB9CC248495670009F119 /* JoHeatChart.swift */; };
 		EB72C82223E863C1003F3329 /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72C82123E863C1003F3329 /* PieViewController.swift */; };
 		EB72C82423E86472003F3329 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72C82323E86472003F3329 /* TableViewController.swift */; };
@@ -47,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoPieChart.swift; sourceTree = "<group>"; };
-		EB296ABA24C52A1100977A8E /* JoChartShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = JoChartShaders.metal; sourceTree = "<group>"; };
 		EB5FB9CC248495670009F119 /* JoHeatChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoHeatChart.swift; sourceTree = "<group>"; };
 		EB72C82123E863C1003F3329 /* PieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieViewController.swift; sourceTree = "<group>"; };
 		EB72C82323E86472003F3329 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				EBBA47E123B8AACC007B94C7 /* JoLineChart.swift */,
 				EB1C3F2C23D060CB003BE2BF /* JoPieChart.swift */,
 				EB5FB9CC248495670009F119 /* JoHeatChart.swift */,
-				EB296ABA24C52A1100977A8E /* JoChartShaders.metal */,
 			);
 			path = chart;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 				EB72C82223E863C1003F3329 /* PieViewController.swift in Sources */,
 				EB5FB9CD248495670009F119 /* JoHeatChart.swift in Sources */,
 				EB72C82623E867B0003F3329 /* Util.swift in Sources */,
-				EB296ABB24C52A1100977A8E /* JoChartShaders.metal in Sources */,
 				EBBA47B423B8A924007B94C7 /* LineViewController.swift in Sources */,
 				EB72C82A23E9A70E003F3329 /* HeatViewController.swift in Sources */,
 				EBA36AFE23C85C1200AAD2C9 /* JoAxisChartBase.swift in Sources */,
